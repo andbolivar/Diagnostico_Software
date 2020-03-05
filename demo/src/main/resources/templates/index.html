@@ -17,12 +17,13 @@
 					<th>email</th>
 					<th>Birthday</th>
 					<th>Address</th>
+					<th>Actions</th>
 				</tr>		
 			</thead>
 			<tbody>
 				<tr th:each="client:${client}">
 					<td th:text="${client.idClient}"></td>	
-					<td th:text="${client.Client_Name}${client.Client_Surname}"></td>
+					<td th:text="${client.Client_Name} + ${client.Client_Surname}"></td>
 					<td th:text="${client.Client_Email}"></td>
 					<td th:text="${client.Client_Birthday_Date}"></td>
 					<td th:text="${client.Client_Address_idClient_Address}"></td>
