@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.crud.demo.interfaceService.IclientService;
 import com.crud.demo.interfaces.IClient;
 import com.crud.demo.modelo.Client;
+@Service
 
 public class ClientService implements IclientService{
 
