@@ -20,7 +20,7 @@ public class Controlador {
 	@GetMapping("/listar")
 	public String listar(Model model) {
 		List<Client>client=service.listar();
-			model.addAttribute("client", client);	
+			model.addAttribute("clients", client);
 		return "index";
 	}
 	

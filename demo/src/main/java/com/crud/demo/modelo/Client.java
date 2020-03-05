@@ -1,14 +1,11 @@
 package com.crud.demo.modelo;
 
 import java.sql.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.springframework.cglib.core.TinyBitSet;
 @Entity
 @Table(name = "client")
 
@@ -16,19 +13,32 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 private int idClient;
-private char[] Client_Name;
-private char[] Client_Surname;
-private char[] Client_Email;
+private String Client_Name;
+private String Client_Surname;
+private String Client_Email;
 private int Client_Address_idClient_Address;
 private Date Client_Birthday_Date;
 private Date Client_Register_Date;
-private TinyBitSet [] Status;
+private int Client_Status;
 private Date updated_at;
 private Date deleted_at;
 
 
 public Client() {
 	// TODO Auto-generated constructor stub
+}
+public Client (int idClient, String Client_name, String Client_Surname, String Client_Email, int Client_Address_idClient_Address, Date Client_Birthday_Date, Date Client_Register_Date, int Client_Status, Date updated_at, Date deleted_at)
+{
+	this.idClient=idClient;
+	this.Client_Name=Client_name;
+	this.Client_Surname=Client_Surname;
+	this.Client_Email=Client_Email;
+	this.Client_Address_idClient_Address=Client_Address_idClient_Address;
+	this.Client_Birthday_Date=Client_Birthday_Date;
+	this.Client_Register_Date=Client_Register_Date;
+	this.Client_Status=Client_Status;
+	this.updated_at=updated_at;
+	this.deleted_at=deleted_at;
 }
 
 
@@ -42,22 +52,32 @@ public void setIdClient(int idClient) {
 }
 
 
-public char[] getClient_Surname() {
+public String getClient_Name() {
+	return Client_Name;
+}
+
+
+public void setClient_Name(String client_Name) {
+	Client_Surname = client_Name;
+}
+
+
+public String getClient_Surname() {
 	return Client_Surname;
 }
 
 
-public void setClient_Surname(char[] client_Surname) {
+public void setClient_Surname(String client_Surname) {
 	Client_Surname = client_Surname;
 }
 
 
-public char[] getClient_Email() {
+public String getClient_Email() {
 	return Client_Email;
 }
 
 
-public void setClient_Email(char[] client_Email) {
+public void setClient_Email(String client_Email) {
 	Client_Email = client_Email;
 }
 
@@ -92,13 +112,13 @@ public void setClient_Register_Date(Date client_Register_Date) {
 }
 
 
-public TinyBitSet[] getStatus() {
-	return Status;
+public int getClient_Status() {
+	return Client_Status;
 }
 
 
-public void setStatus(TinyBitSet[] status) {
-	Status = status;
+public void setClient_Status(int client_Status) {
+	Client_Status = client_Status;
 }
 
 
