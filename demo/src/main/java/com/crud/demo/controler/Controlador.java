@@ -23,5 +23,4 @@ public class Controlador {
 			model.addAttribute("clients", client);
 		return "index";
 	}
-	
 }
