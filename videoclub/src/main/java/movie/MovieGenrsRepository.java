@@ -1,5 +1,7 @@
 package movie;
 
-public class MovieGenrsRepository {
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MovieGenrsRepository extends JpaRepository<MovieGenrs, Integer>{
 }

@@ -1,5 +1,6 @@
 package movie;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MovieRepository extends JpaRepository<Movie, Integer>{
+public interface ActorRepository extends JpaRepository<Actor, Integer>{
 }
