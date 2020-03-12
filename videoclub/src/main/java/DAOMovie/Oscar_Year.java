@@ -1,9 +1,11 @@
-	package movie;
+	package DAOMovie;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+
+import java.time.LocalDate;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -18,7 +20,9 @@ public class Oscar_Year {
     private int idOscar_Year;
 
     private int Oscar_Year;
-    
+    LocalDate updated_at = LocalDate.now();
+    LocalDate deleted_at = LocalDate.now();
+
     @OneToMany(mappedBy = "oscar_Year", cascade = CascadeType.ALL)
     private Set<Oscars> oscars;
     

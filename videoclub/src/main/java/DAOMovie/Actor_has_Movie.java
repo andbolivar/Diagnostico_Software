@@ -1,6 +1,8 @@
-package movie;
+package DAOMovie;
 
 import lombok.*;
+
+import java.time.LocalDate;
 
 import javax.persistence.*;
 
@@ -8,6 +10,9 @@ import javax.persistence.*;
 
 @Entity
 public class Actor_has_Movie {
+
+    LocalDate updated_at = LocalDate.now();
+    LocalDate deleted_at = LocalDate.now();
 
     @ManyToOne
     @JoinColumn

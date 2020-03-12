@@ -1,15 +1,17 @@
-	package movie;
+	package DAOMovie;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+
+import java.time.LocalDate;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Data
-@EqualsAndHashCode(exclude = "actors")
+@EqualsAndHashCode(exclude = "actor_has_Movies")
 
 @Entity
 public class Actor {
@@ -20,7 +22,9 @@ public class Actor {
     private String Name;
     
     private String Surname;
-    
+    LocalDate updated_at = LocalDate.now();
+    LocalDate deleted_at = LocalDate.now();
+
     @OneToMany(mappedBy = "Actor", cascade = CascadeType.ALL)
     private Set<Actor_has_Movie> actor_has_Movies;
 

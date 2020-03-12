@@ -1,14 +1,16 @@
-package client;
+package DAO;
 
 
 import javax.persistence.*;
+
+import java.time.LocalDate;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import lombok.*;
 
 @Data
-@EqualsAndHashCode(exclude = "client_Addresses")
+@EqualsAndHashCode(exclude = "clients")
 
 @Entity
 public class Client_Address {
@@ -19,6 +21,8 @@ public class Client_Address {
     private String Client_Address_direction;
     private String Client_Address_latitude;
     private String Client_Address_longitud;
+    LocalDate updated_at = LocalDate.now();
+    LocalDate deleted_at = LocalDate.now();
 
 
     @ManyToOne

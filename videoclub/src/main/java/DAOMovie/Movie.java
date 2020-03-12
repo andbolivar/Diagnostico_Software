@@ -1,15 +1,15 @@
-package movie;
+package DAOMovie;
 
 import lombok.*;
-import rent.Stock;
 
+import java.time.LocalDate;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.persistence.*;
 
-import client.Client_Address;
+import DAORent.Stock;
 
 @Data
 
@@ -26,6 +26,8 @@ public class Movie {
     private int Year_Released;
     
     private float Cost;
+    LocalDate updated_at = LocalDate.now();
+    LocalDate deleted_at = LocalDate.now();
 
     @ManyToOne
     @JoinColumn
@@ -60,7 +62,7 @@ public class Movie {
     public Movie(String Movie_Name, Stock... stocks) {
         this.Movie_Name = Movie_Name;
         this.stocks = Stream.of(stocks).collect(Collectors.toSet());
-        this.stocks.forEach(x -> x.setstock(this));
+        this.stocks.forEach(x -> x.setStock(this));
     }
     
 	public Object setActor_has_Movie(Actor_has_Movie actor_has_Movie) {

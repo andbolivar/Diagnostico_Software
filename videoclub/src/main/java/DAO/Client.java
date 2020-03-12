@@ -1,15 +1,18 @@
-package client;
+package DAO;
 
 import javax.persistence.*;
+
+import DAORent.Rent;
+
+import java.time.LocalDate;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import lombok.*;
-import rent.Rent;
 
 @Data
-@EqualsAndHashCode(exclude = "client_Addresses")
+@EqualsAndHashCode(exclude = "rents")
 
 @Entity
 public class Client {
@@ -20,7 +23,12 @@ public class Client {
     private String Client_Name;
     private String Client_Surname;
     private String Client_Email;
+    LocalDate Client_Brithday_Date = LocalDate.now();
+    LocalDate Client_Register_Date = LocalDate.now();
+
     private int Client_Status;
+    LocalDate updated_at = LocalDate.now();
+    LocalDate deleted_at = LocalDate.now();
 
     @ManyToOne
     @JoinColumn
@@ -35,8 +43,8 @@ public class Client {
     public Client(String Client_Name, Rent_Time_end... rent_Time_ends) {
         this.Client_Name = Client_Name;
         
-        this.client_Addresses = Stream.of(client_Addresses).collect(Collectors.toSet());
-        this.client_Addresses.forEach(x -> x.setclient_Address(this));
+        this.rent_Time_ends = Stream.of(rent_Time_ends).collect(Collectors.toSet());
+        this.rent_Time_ends.forEach(x -> x.setRent_Time_end(this));
     }
 
 	public Object setcity(Client_Address client_Address2) {

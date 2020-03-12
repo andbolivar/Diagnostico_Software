@@ -1,13 +1,15 @@
-package rent;
+package DAORent;
 
 
 import javax.persistence.*;
+
+import DAOMovie.Movie;
+
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import lombok.*;
-import movie.Movie;
 
 @Data
 @EqualsAndHashCode(exclude = "client_Addresses")
@@ -43,5 +45,20 @@ public class Stock {
         this.stock_has_Rents = Stream.of(stock_has_Rents).collect(Collectors.toSet());
         this.stock_has_Rents.forEach(x -> x.setstock_has_Rent(this));
     }
+
+	public Object setStock(Subtitle subtitle2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object setStock(Language language2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object setStock(Movie movie2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

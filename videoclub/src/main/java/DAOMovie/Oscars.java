@@ -1,14 +1,14 @@
-package movie;
+package DAOMovie;
 
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.persistence.*;
 
-import client.Client_Address;
 
 @Data
 
@@ -23,6 +23,8 @@ public class Oscars {
     private int Oscar_Cat_idOscar_Cat;
     
     private int Oscar_Year_idOscar_Year;
+    LocalDate updated_at = LocalDate.now();
+    LocalDate deleted_at = LocalDate.now();
 
     @ManyToOne
     @JoinColumn

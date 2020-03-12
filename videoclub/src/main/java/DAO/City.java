@@ -1,7 +1,9 @@
-package client;
+package DAO;
 
 
 import javax.persistence.*;
+
+import java.time.LocalDate;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -18,6 +20,8 @@ public class City {
     private int idCity;
 
     private String City_Name;
+    LocalDate updated_at = LocalDate.now();
+    LocalDate deleted_at = LocalDate.now();
 
     @ManyToOne
     @JoinColumn

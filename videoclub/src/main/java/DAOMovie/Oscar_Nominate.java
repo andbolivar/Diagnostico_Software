@@ -1,14 +1,15 @@
-package movie;
+package DAOMovie;
 
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.persistence.*;
 
-import client.Client_Address;
+
 
 @Data
 
@@ -17,7 +18,9 @@ public class Oscar_Nominate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idOscar_nominate;
-    
+    LocalDate updated_at = LocalDate.now();
+    LocalDate deleted_at = LocalDate.now();
+
     private String Oscar_Nominate;
     @ManyToOne
     @JoinColumn

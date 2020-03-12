@@ -1,4 +1,4 @@
-package rent;
+package DAORent;
 
 public class Cost_Day {
 
