@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import lombok.*;
+import rent.Rent;
 
 @Data
 @EqualsAndHashCode(exclude = "client_Addresses")
@@ -25,8 +26,8 @@ public class Client {
     @JoinColumn
     private Client_Address client_Address;
 
-    public Client(String Rent_Time_end) {
-        this.Rent_Time_end = Rent_Time_end;
+    public Client(String Client_Name) {
+        this.Client_Name = Client_Name;
     }
     @OneToMany(mappedBy = "Client", cascade = CascadeType.ALL)
     private Set<Rent> rents;

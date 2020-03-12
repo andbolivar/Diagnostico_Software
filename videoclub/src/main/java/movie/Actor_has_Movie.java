@@ -20,4 +20,9 @@ public class Actor_has_Movie {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public Object setactor_has_Movies(Movie movie2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

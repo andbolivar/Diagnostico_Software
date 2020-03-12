@@ -43,6 +43,11 @@ public class Oscar_Nominate {
 		return null;
 	}
 
+	public Object setoscar_Nominate(Movie movie2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
     
     
 }
