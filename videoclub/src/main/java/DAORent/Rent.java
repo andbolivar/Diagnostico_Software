@@ -47,4 +47,9 @@ public class Rent {
         this.stock_has_Rents.forEach(x -> x.setstock_has_Rent(this));
     }
 
+	public Object setRents(DAO.Client client2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

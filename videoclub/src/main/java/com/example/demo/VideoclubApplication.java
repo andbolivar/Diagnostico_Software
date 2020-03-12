@@ -30,6 +30,5 @@ public class VideoclubApplication implements CommandLineRunner {
     @Override
     public void run(String... args) {
 
-    	movieGenrsRepository.save(new MovieGenrs("Category 1", new Movie("Hello Koding 1"), new Movie("Hello Koding 2")));
     }
 }

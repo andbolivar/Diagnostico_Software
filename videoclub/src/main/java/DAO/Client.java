@@ -40,11 +40,11 @@ public class Client {
     @OneToMany(mappedBy = "Client", cascade = CascadeType.ALL)
     private Set<Rent> rents;
     
-    public Client(String Client_Name, Rent_Time_end... rent_Time_ends) {
+    public Client(String Client_Name, Rent... rents) {
         this.Client_Name = Client_Name;
         
-        this.rent_Time_ends = Stream.of(rent_Time_ends).collect(Collectors.toSet());
-        this.rent_Time_ends.forEach(x -> x.setRent_Time_end(this));
+        this.rents = Stream.of(rents).collect(Collectors.toSet());
+        this.rents.forEach(x -> x.setRents(this));
     }
 
 	public Object setcity(Client_Address client_Address2) {
